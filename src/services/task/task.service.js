@@ -58,18 +58,18 @@ class TaskService {
 
   /**
    * Get a task by ID
-   * @param {number} id - Task ID
+   * @param {string} id - Task ID
    * @returns {Promise<Object|null>} - The found task or null
    */
   async getTaskById(id) {
     return prisma.task.findUnique({
-      where: { id: Number(id) },
+      where: { id: id },
     });
   }
 
   /**
    * Update a task
-   * @param {number} id - Task ID
+   * @param {string} id - Task ID
    * @param {Object} taskData - The task data to update
    * @returns {Promise<Object>} - The updated task
    */
@@ -87,30 +87,30 @@ class TaskService {
       updateData.dueDate = dueDate ? new Date(dueDate) : null;
 
     return prisma.task.update({
-      where: { id: Number(id) },
+      where: { id: id },
       data: updateData,
     });
   }
 
   /**
    * Delete a task
-   * @param {number} id - Task ID
+   * @param {string} id - Task ID
    * @returns {Promise<Object>} - The deleted task
    */
   async deleteTask(id) {
     return prisma.task.delete({
-      where: { id: Number(id) },
+      where: { id: id },
     });
   }
 
   /**
    * Check if a task exists
-   * @param {number} id - Task ID
+   * @param {string} id - Task ID
    * @returns {Promise<boolean>} - True if task exists
    */
   async taskExists(id) {
     const count = await prisma.task.count({
-      where: { id: Number(id) },
+      where: { id: id },
     });
     return count > 0;
   }

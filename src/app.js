@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const taskRoutes = require("./routes/task/task.route");
+const userRoutes = require("./routes/user/user.route");
 const errorHandler = require("./middlewares/error.middleware");
 
 // Initialize Express app
@@ -21,6 +22,7 @@ if (process.env.NODE_ENV === "development") {
 
 // API Routes
 // Mounts the task routes under the /api/tasks path prefix.
+app.use("/api/users", userRoutes);
 app.use("/api/tasks", taskRoutes);
 
 // Base route

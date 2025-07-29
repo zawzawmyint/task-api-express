@@ -29,8 +29,8 @@ Task API is a robust backend service that allows you to create, read, update, an
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd task-api
+   git clone https://github.com/zawzawmyint/task-api-express.git
+   cd task-api-express
    ```
 2. Install dependencies:
    ```bash
@@ -40,6 +40,8 @@ Task API is a robust backend service that allows you to create, read, update, an
    DATABASE_URL="postgresql://username:password@localhost:5432/task_db?schema=public"
    PORT=3001
    NODE_ENV=development
+   JWT_SECRET=your-secret-key
+   JWT_EXPIRATION_TIME=30d
 
 4. Generate Prisma client:
    ```bash
@@ -72,3 +74,7 @@ Task API is a robust backend service that allows you to create, read, update, an
 - `npm run lint` - Run ESLint
 - `npm run format` - Format code with Prettier
 - `npm run test` - Run tests
+
+## Test Documentation
+
+- [Test Cases](TESTDOCUMENTATION.md)

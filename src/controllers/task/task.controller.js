@@ -59,7 +59,7 @@ class TaskController {
 
       res.json({
         success: true,
-        count: tasks.length,
+        total: tasks.length,
         data: tasks,
       });
     } catch (error) {
