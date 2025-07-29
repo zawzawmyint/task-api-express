@@ -2,7 +2,20 @@
 
 ## Overview
 
-This document outlines the test cases for the Task API Express application.
+This document outlines the test cases for the Task API Express application with Supertest.
+
+## Prerequisites
+
+- Node.js and npm installed
+- PostgreSQL database set up
+- Task API Express application running
+
+## Tools & Why Supertest & Jest
+
+- Supertest - HTTP assertions library for Node.js
+- Supertest is used to test the API endpoints by simulating HTTP requests and responses.
+- Jest - Testing framework
+- Jest is used to write and run the test cases.
 
 ## Test Cases
 
